@@ -99,10 +99,6 @@
       chdir: nagios-4.4.6/
     when: ansible_distribution == "Ubuntu"
 
-  - name: create a user and set the password for Ubuntu
-    command: sudo htpasswd -b /usr/local/nagios/etc/htpasswd.users aquino hello
-    when: ansible_distribution == "CentOS"
-
   - name: download the nagions plugin for Ubuntu
     command: wget https://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz
     when: ansible_distribution == "Ubuntu"
